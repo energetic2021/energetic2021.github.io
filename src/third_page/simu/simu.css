@@ -1,0 +1,725 @@
+.simu-root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(231, 237, 247, 0.96), rgba(246, 248, 251, 0.98)),
+    #f1f4f8;
+  color: #24324b;
+  display: grid;
+  grid-template-columns: 184px minmax(0, 1fr) 368px;
+  position: relative;
+}
+
+.simu-left-nav {
+  border-right: 1px solid #d7dee9;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: inset -1px 0 0 rgba(36, 50, 75, 0.03);
+  padding: 16px 14px;
+  overflow: auto;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 18px;
+}
+
+.simu-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: #17243a;
+}
+
+.simu-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: linear-gradient(145deg, #244f9f, #6f9ee8);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(36, 79, 159, 0.22);
+  flex: 0 0 auto;
+}
+
+.simu-brand strong {
+  display: block;
+  font-size: 13px;
+  line-height: 1.15;
+}
+
+.simu-brand small {
+  display: block;
+  color: #748196;
+  font-size: 11px;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.simu-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: stretch;
+}
+
+.simu-nav-btn {
+  position: relative;
+  width: 100%;
+  min-height: 36px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #56657d;
+  border-radius: 10px;
+  padding: 9px 10px 9px 14px;
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.15;
+  cursor: pointer;
+  transition: 160ms ease;
+  display: flex;
+  align-items: center;
+}
+
+.simu-nav-btn.active {
+  background: #edf3ff;
+  border-color: #d6e2f7;
+  color: #244f9f;
+  box-shadow: none;
+}
+
+.simu-nav-btn.active::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 9px;
+  width: 3px;
+  height: 18px;
+  border-radius: 999px;
+  background: #244f9f;
+}
+
+.simu-nav-btn:hover {
+  border-color: #d7e2f6;
+  color: #244f9f;
+}
+
+.simu-nav-label {
+  font-size: 12px;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.simu-center {
+  min-width: 0;
+  padding: 16px 14px 16px 16px;
+  min-height: 0;
+}
+
+.simu-stage-panel {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 48px minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid #d7dee9;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 18px 44px rgba(36, 50, 75, 0.14);
+}
+
+.simu-center-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #d7dee9;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98));
+}
+
+.simu-toolbar-title {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.simu-toolbar-title strong {
+  color: #17243a;
+  font-size: 14px;
+}
+
+.simu-toolbar-title span {
+  font-size: 12px;
+  color: #6d7b90;
+}
+
+.simu-toolbar-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 6px;
+}
+
+.simu-view-host {
+  min-height: 0;
+  min-width: 0;
+  padding: 10px;
+  background: #f7f9fc;
+}
+
+.simu-view-fill {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.simu-view-fill .armUrdfViewerShell {
+  margin-top: 0;
+  height: 100%;
+  min-height: 0;
+  border-radius: 10px;
+  border-color: #d5deec;
+  background: #f8fafc;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.simu-view-fill .armUrdfViewer {
+  height: 100%;
+}
+
+.simu-right-panel {
+  border-left: 1px solid #d7dee9;
+  background: #f1f4f8;
+  box-shadow: inset 1px 0 0 rgba(36, 50, 75, 0.03);
+  padding: 16px 16px 16px 8px;
+  overflow: auto;
+}
+
+.simu-panel-backdrop {
+  min-height: 100%;
+  border: 1px solid #d7dee9;
+  border-radius: 20px;
+  background: #ffffff;
+  padding: 14px;
+  box-shadow: 0 18px 44px rgba(36, 50, 75, 0.12);
+}
+
+.simu-panel-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 13px;
+  letter-spacing: 0;
+  color: #17243a;
+}
+
+.simu-card {
+  border: 1px solid #dbe2ec;
+  background: linear-gradient(180deg, #fbfcfe, #f5f8fc);
+  border-radius: 12px;
+  padding: 9px;
+  margin-bottom: 8px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.compact-card {
+  padding: 8px;
+}
+
+.simu-panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.simu-panel-actions:last-child {
+  margin-bottom: 0;
+}
+
+.simu-joint-row {
+  margin-bottom: 8px;
+}
+
+.simu-joint-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.simu-range {
+  width: 100%;
+}
+
+.simu-inline-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.simu-field {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  min-width: 0;
+}
+
+.simu-field.dense {
+  margin-bottom: 6px;
+}
+
+.simu-field-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.simu-field-check.compact {
+  gap: 5px;
+  font-size: 11px;
+}
+
+.simu-note {
+  font-size: 12px;
+  opacity: 1;
+  color: #5e78ad;
+  margin-bottom: 6px;
+}
+
+.simu-preset-list {
+  display: grid;
+  gap: 6px;
+}
+
+.simu-bridge-dock {
+  border: 1px solid #d5deec;
+  background:
+    linear-gradient(180deg, #f8fafc, #eef4fb);
+  border-radius: 14px;
+  padding: 10px;
+  margin-bottom: 14px;
+  display: grid;
+  gap: 8px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86);
+}
+
+.simu-bridge-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #17243a;
+  font-size: 12px;
+}
+
+.simu-bridge-actions,
+.simu-toggle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.simu-ws-input {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  border: 1px solid #cfd8e6;
+  border-radius: 9px;
+  padding: 6px 8px;
+  font-size: 12px;
+  min-width: 0;
+  background: #ffffff;
+  color: #24324b;
+}
+
+.simu-ws-input.compact {
+  max-width: none;
+  min-width: 0;
+}
+
+.simu-bridge-status {
+  font-size: 11px;
+  font-weight: 700;
+  color: #35518d;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid #bfd1f7;
+  background: #ecf3ff;
+  white-space: nowrap;
+}
+
+.simu-bridge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d06464;
+  box-shadow: 0 0 0 3px rgba(208, 100, 100, 0.12);
+  flex: 0 0 auto;
+}
+
+.simu-bridge-dot.online {
+  background: #20a36a;
+  box-shadow: 0 0 0 3px rgba(32, 163, 106, 0.14);
+}
+
+.simu-state-box {
+  font-size: 11px;
+  line-height: 1.3;
+  max-height: 190px;
+  overflow: auto;
+  border: 1px solid #d7e2fa;
+  background: #f8fafc;
+  border-radius: 7px;
+  padding: 8px;
+}
+
+.simu-preset-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.simu-grid6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.simu-grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+  margin-bottom: 6px;
+}
+
+.simu-field.compact {
+  min-width: 0;
+}
+
+.simu-field-group-title {
+  color: #5e78ad;
+  font-size: 11px;
+  font-weight: 700;
+  margin: 2px 0 5px;
+}
+
+.simu-point-meta-grid {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 6px;
+}
+
+.simu-waypoint-list {
+  display: grid;
+  gap: 5px;
+  margin: 6px 0;
+}
+
+.simu-waypoint-item {
+  border: 1px solid #dbe2ec;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 12px minmax(58px, 0.8fr) minmax(86px, 1fr) auto;
+  align-items: center;
+  gap: 6px;
+  text-align: left;
+  color: #24324b;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.simu-waypoint-item.seq-item {
+  grid-template-columns: 12px minmax(54px, 1fr) auto;
+}
+
+.simu-waypoint-label {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.simu-waypoint-label strong {
+  font-size: 12px;
+  line-height: 1.1;
+}
+
+.simu-waypoint-label small {
+  overflow: hidden;
+  color: #6d83b3;
+  font-size: 10px;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ghostBtn.active {
+  border-color: #8fb2ef;
+  background: #edf3ff;
+  color: #244f9f;
+}
+
+.simu-waypoint-item.active {
+  border-color: #a9bee3;
+  box-shadow: 0 4px 12px rgba(36, 50, 75, 0.08);
+}
+
+.simu-waypoint-item.running {
+  border-color: #f1b65c;
+  background: linear-gradient(180deg, #fffaf0, #ffffff);
+  box-shadow: 0 0 0 3px rgba(241, 182, 92, 0.14);
+}
+
+.simu-waypoint-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.simu-waypoint-coords {
+  min-width: 0;
+  color: #5f78ac;
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.simu-waypoint-actions {
+  align-items: center;
+  display: inline-flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.simu-mini-action {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 6px 8px;
+  transition: background 0.16s ease, color 0.16s ease, transform 0.16s ease;
+  white-space: nowrap;
+}
+
+.simu-mini-action:hover {
+  transform: translateY(-1px);
+}
+
+.simu-mini-action.queue {
+  background: #eaf2ff;
+  color: #2456a8;
+}
+
+.simu-mini-action.queue:hover {
+  background: #dbeaff;
+}
+
+.simu-mini-action.danger {
+  background: transparent;
+  color: #b55353;
+  padding-inline: 6px;
+}
+
+.simu-mini-action.danger:hover {
+  background: #fff0f0;
+  color: #923838;
+}
+
+.simu-mini-action:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  transform: none;
+}
+
+.simu-empty {
+  border: 1px dashed #cbd8f2;
+  border-radius: 10px;
+  color: #6b82ad;
+  font-size: 12px;
+  padding: 8px;
+  text-align: center;
+}
+
+.simu-validation-card {
+  align-items: center;
+  border: 1px solid #dbe2ec;
+  border-radius: 12px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 10px minmax(0, 1fr) auto;
+  margin-bottom: 9px;
+  padding: 8px;
+  background: #f8fafc;
+}
+
+.simu-validation-card strong {
+  display: block;
+  color: #17243a;
+  font-size: 12px;
+  line-height: 1.1;
+}
+
+.simu-validation-card small {
+  color: #6d7b90;
+  display: block;
+  font-size: 10px;
+  line-height: 1.25;
+  margin-top: 2px;
+}
+
+.simu-validation-dot {
+  border-radius: 999px;
+  display: block;
+  height: 9px;
+  width: 9px;
+  background: #a8b4c6;
+  box-shadow: 0 0 0 3px rgba(168, 180, 198, 0.13);
+}
+
+.simu-validation-card.ok {
+  border-color: #b9dfcd;
+  background: #f1fbf6;
+}
+
+.simu-validation-card.ok .simu-validation-dot {
+  background: #20a36a;
+  box-shadow: 0 0 0 3px rgba(32, 163, 106, 0.14);
+}
+
+.simu-validation-card.near {
+  border-color: #f2d190;
+  background: #fff9ec;
+}
+
+.simu-validation-card.near .simu-validation-dot {
+  background: #e19b2d;
+  box-shadow: 0 0 0 3px rgba(225, 155, 45, 0.15);
+}
+
+.simu-validation-card.bad {
+  border-color: #efb9b9;
+  background: #fff5f5;
+}
+
+.simu-validation-card.bad .simu-validation-dot {
+  background: #d06464;
+  box-shadow: 0 0 0 3px rgba(208, 100, 100, 0.13);
+}
+
+.simu-kv {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 5px 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.simu-kv span {
+  color: #6b82ad;
+}
+
+.simu-kv strong {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ghostBtn {
+  border-radius: 9px;
+  line-height: 1.1;
+  border-color: #cfd8e6;
+  background: #ffffff;
+  color: #33445e;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.ghostBtn.small {
+  padding: 6px 8px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.ghostBtn:hover {
+  border-color: #aac0e0;
+  color: #244f9f;
+}
+
+.ghostBtn.primary {
+  border-color: #9cb9eb;
+  background: #edf4ff;
+  color: #244f9f;
+  font-weight: 700;
+}
+
+.ghostBtn.danger {
+  border-color: #efc5c5;
+  background: #fff4f4;
+  color: #a74141;
+  font-weight: 700;
+}
+
+.ghostBtn.danger:hover {
+  border-color: #df9d9d;
+  color: #8f3030;
+}
+
+@media (max-width: 1200px) {
+  .simu-root {
+    grid-template-columns: 164px minmax(0, 1fr) 340px;
+  }
+}
+
+@media (max-width: 900px) {
+  .simu-root {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(45vh, 1fr) minmax(280px, 42vh);
+  }
+
+  .simu-left-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(167, 189, 233, 0.7);
+    overflow-x: auto;
+  }
+
+  .simu-brand {
+    margin-bottom: 0;
+    flex: 0 0 auto;
+  }
+
+  .simu-nav-list {
+    flex-direction: row;
+  }
+
+  .simu-nav-btn {
+    white-space: nowrap;
+    min-width: 96px;
+  }
+
+  .simu-center {
+    padding: 8px;
+  }
+
+  .simu-right-panel {
+    border-left: 0;
+    border-top: 1px solid rgba(167, 189, 233, 0.7);
+  }
+}
