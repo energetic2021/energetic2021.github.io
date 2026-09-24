@@ -1,1 +1,0 @@
-export { SimuPage } from './simu';
